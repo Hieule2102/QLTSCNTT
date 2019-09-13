@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Source.Models.THIETBI>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+    <main>
+        <div class="container link">
+            <p>Trang chủ > Báo cáo > Nhật ký thiết bị</p>
+            <hr />
+        </div>
+        <section class="container" id="nk-tb">
+            <h1 class="title">NHẬT KÝ THIẾT BỊ</h1>
+            @using (Html.BeginForm("Index", "NhatKyThietBi", FormMethod.Get))
+            {
+                <div class="search">
+                    @Html.TextBox("searchString", null, new
+                    {
+                        @class = "form-control",
+                    @style = "width: 20rem; margin-right: 10px"
+                    })
+                    <button type="submit" class="btn-search">
+                        <span>Tìm kiếm</span><i class="fas fa-search"></i>
+                    </button>
+                </div>
+            } @using (Html.BeginForm("Index", "NhatKyThietBi"))
+            {
+                <div class="loc">
+                    <h4><i class="fas fa-filter"></i></h4>
+                    <div class="div-filter">
+
+                        <div class="filter">
+                            <label for="">Trạng thái</label>
+                            @Html.DropDownList("trangThai", null, "All", new
+                            {
+                                @class =
+                              "form-control",
+                                @placeholder = "",
+                                @onchange = @"form.submit();"
+                              })
+                        </div>
+
+
+
+                        <div class="filter">
+                            <label for="">Ngày GD</label>
+                            <select class="form-control">
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="mercedes">Mercedes</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+            }
+            <div class="nk-tb">
+                <table>
+                    <tr>
+                        <th>Mã TB</th>
+                        <th>Tên TB</th>
+                        <th>Ngày giao dịch</th>
+                        <th>Trạng thái</th>
+                        <th>ĐVQL</th>
+                        <th>Người QL</th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.MATB)</td>
+                            <td>@Html.DisplayFor(modelItem => item.TENTB)</td>
+                            <td>@Html.DisplayFor(modelItem => item.NGAY_GD)</td>
+                            <td>@Html.DisplayFor(modelItem => item.TINH_TRANG)</td>
+                            <td>@Html.DisplayFor(modelItem => item.DON_VI.TEN_DON_VI)</td>
+                            <td> @Html.DisplayFor(modelItem => item.MANS_QL)</td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </section>
+    </main>
+

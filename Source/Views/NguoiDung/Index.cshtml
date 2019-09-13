@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Source.Models.NGUOI_DUNG>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<main>
+    <div class="container link">
+        <p>Trang chủ > Quản lý người dùng > Người dùng</p>
+        <hr />
+    </div>
+    <section class="container" id="nguoi-dung">
+        <h1 class="title">NGƯỜI DÙNG</h1>
+        <h4 class="sub-title">
+            Danh sách người dùng
+        </h4>
+        @using (Html.BeginForm("Index", "NguoiDung"))
+        {
+            @Html.AntiForgeryToken() @Html.ValidationSummary(true)
+            <div class="loc">
+                <h4><i class="fas fa-filter"></i></h4>
+                <div class="div-filter">
+                    <div class="filter">
+                        <label for="">Đơn vị</label>
+                        @Html.DropDownList("donVi", null, "All", new
+                        {
+                            @class =
+                          "form-control",
+                            @placeholder = "",
+                            @onchange = @"form.submit();"
+                          })
+                    </div>
+                    <div class="filter">
+                        <label for="">Nhóm</label>
+                        @Html.DropDownList("tenNhom", null, "All", new
+                        {
+                            @class =
+                          "form-control",
+                            @placeholder = "",
+                            @onchange = @"form.submit();"
+                          })
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="nguoi-dung">
+            <table>
+                <tr>
+                    <th>Mã người dùng</th>
+                    <th>Tên người dùng</th>
+                    <th>Đơn vị</th>
+                    <th>Nhóm</th>
+                    <th>Email</th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.MA_ND)</td>
+                        <td>@Html.DisplayFor(modelItem => item.TEN_ND)</td>
+                        <td>@Html.DisplayFor(modelItem => item.DON_VI.TEN_DON_VI)</td>
+                        <td>
+                            @foreach (var nd in item.NHOM_ND)
+                            {
+                                if (nd.MA_ND ==
+item.MA_ND)
+                                {@Html.DisplayFor(m =>
+                 nd.NHOM_NGUOI_DUNG.TEN_NHOM)<br />
+                            }
+                        }
+                        </td>
+                        <td>@Html.DisplayFor(modelItem => item.EMAIL)</td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </section>
+</main>
+
+

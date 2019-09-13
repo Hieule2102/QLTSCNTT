@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Source.Models.LOAI_THIETBI>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<main>
+    <div class="container link">
+        <p>Trang chủ > Danh mục > Loại thiết bị</p>
+        <hr />
+    </div>
+    <section class="container" id="loai-tb">
+        <h1 class="title">LOẠI THIẾT BỊ</h1>
+        <div class="div-loai-tb">
+            <div class="them-loai-tb">
+                <h4 class="sub-title">
+                    Thêm loại thiết bị
+                </h4>
+                @using (Html.BeginForm("Create", "LoaiThietBi", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken() @Html.ValidationSummary(true)
+                    <form action="">
+                        <div class="form-group">
+                            <label for="">Mã LTB:</label>
+                            <input name="MA_LOAITB"
+                                   aria-describedby="emailHelp"
+                                   placeholder="" />
+                        </div>
+                        <div class="form-group">
+                            <label for="">Tên LTB:</label>
+                            <input name="TEN_LOAI"
+                                   aria-describedby="emailHelp"
+                                   placeholder="" />
+                        </div>
+                        <div class="form-group">
+                            <label for="">Thuộc NTB:</label>
+                            @*<input
+                                  name="MA_NHOMTB"
+                                  aria-describedby="emailHelp"
+                                  placeholder=""
+                                />*@ @Html.DropDownList("MA_NHOMTB", null, new
+                                {
+                                    @class =
+                           "form-control",
+                                    @placeholder = ""
+                                })
+                            </div>
+                            <div class="form-group">
+                                <label for="nhom-tb">Ghi chú:</label>
+                                <textarea name="GHI_CHU"
+                                          aria-describedby="emailHelp"
+                                          placeholder=""></textarea>
+                            </div>
+                            <button type="submit" value="Create" class="them">THÊM</button>
+                        </form>
+                }
+            </div>
+            <div class="ds-ltb">
+                <h4 class="sub-title">
+                    Danh sách loại thiết bị
+                </h4>
+                <table>
+                    <tr>
+                        <th>Mã loại TB</th>
+                        <th>Tên loại TB</th>
+                        <th>Thuộc nhóm TB</th>
+                        <th>Ghi chú</th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MA_LOAITB)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TEN_LOAI)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NHOM_THIETBI.TEN_NHOM)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.GHI_CHU)
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </section>
+</main>

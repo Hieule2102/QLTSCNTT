@@ -1,0 +1,91 @@
+﻿@model IEnumerable<Source.Models.DON_VI>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<main>
+    <div class="container link">
+        <p>Trang chủ > Danh mục > Đơn vị</p>
+        <hr />
+    </div>
+    <section class="container" id="don-vi">
+        <h1 class="title">ĐƠN VỊ</h1>
+        <div class="div-don-vi">
+            <div class="them-don-vi">
+                <h4 class="sub-title">
+                    Thêm đơn vị
+                </h4>
+                @using (Html.BeginForm("Create", "DonVi", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken() @Html.ValidationSummary(true)
+                    <form action="">
+                        <div class="form-group">
+                            <label for="">Tên ĐV:</label>
+                            <input class="form-control"
+                                   name="TEN_DON_VI"
+                                   aria-describedby="emailHelp"
+                                   placeholder="" />
+                        </div>
+                        <div class="form-group">
+                            <label for="">Địa chỉ:</label>
+                            <input class="form-control"
+                                   name="DIA_CHI"
+                                   aria-describedby="emailHelp"
+                                   placeholder="" />
+                        </div>
+                        <div class="form-group">
+                            <label for="">Điện thoại:</label>
+                            <input class="form-control"
+                                   name="DIEN_THOAI"
+                                   aria-describedby="emailHelp"
+                                   placeholder="" />
+                        </div>
+                        <div class="form-group">
+                            <label for="">Fax:</label>
+                            <input class="form-control"
+                                   name="Fax"
+                                   aria-describedby="emailHelp"
+                                   placeholder="" />
+                        </div>
+                        <button type="submit" value="Create" class="them">THÊM</button>
+                    </form>
+                }
+            </div>
+            <div class="ds-dv">
+                <h4 class="sub-title">
+                    Danh sách đơn vị
+                </h4>
+                <table>
+                    <tr>
+                        <th>Mã ĐV</th>
+                        <th>Tên đơn vị</th>
+                        <th>Địa chỉ</th>
+                        <th>Điện thoại</th>
+                        <th>Fax</th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MA_DON_VI)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TEN_DON_VI)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DIA_CHI)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DIEN_THOAI)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FAX)
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </section>
+</main>

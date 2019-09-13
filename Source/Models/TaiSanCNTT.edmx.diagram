@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c7ed4eb630244d16801895c8aaf05be4" Name="Diagram1">
+        <EntityTypeShape EntityType="QuanLyTaiSanCNTTModel.CAU_HINH" Width="1.5" PointX="11.25" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyTaiSanCNTTModel.DIEU_CHUYEN_THIET_BI" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyTaiSanCNTTModel.DM_CHUC_NANG" Width="1.5" PointX="3" PointY="25.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyTaiSanCNTTModel.DM_CPU" Width="1.5" PointX="9" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyTaiSanCNTTModel.DM_HDH" Width="1.5" PointX="9" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyTaiSanCNTTModel.DM_MAN_HINH" Width="1.5" PointX="9" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyTaiSanCNTTModel.DM_O_CUNG" Width="1.5" PointX="9" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyTaiSanCNTTModel.DM_RAM" Width="1.5" PointX="9" PointY="26.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyTaiSanCNTTModel.DM_VGA" Width="1.5" PointX="9" PointY="28.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyTaiSanCNTTModel.DON_VI" Width="1.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyTaiSanCNTTModel.HINH_ANH" Width="1.5" PointX="8.25" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyTaiSanCNTTModel.LOAI_THIETBI" Width="1.5" PointX="3.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyTaiSanCNTTModel.NGUOI_DUNG" Width="1.5" PointX="3" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyTaiSanCNTTModel.NHA_CUNG_CAP" Width="1.5" PointX="3.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyTaiSanCNTTModel.NHAP_KHO" Width="1.5" PointX="5.25" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyTaiSanCNTTModel.NHOM_ND" Width="1.5" PointX="5.25" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyTaiSanCNTTModel.NHOM_NGUOI_DUNG" Width="1.5" PointX="3" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyTaiSanCNTTModel.NHOM_THIETBI" Width="1.5" PointX="1.5" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyTaiSanCNTTModel.PHAN_QUYEN" Width="1.5" PointX="3" PointY="28" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyTaiSanCNTTModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyTaiSanCNTTModel.THIETBI" Width="1.5" PointX="6" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyTaiSanCNTTModel.THONG_KE_THIETBI" Width="1.5" PointX="8.25" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyTaiSanCNTTModel.XAC_NHAN_DIEU_CHUYEN" Width="1.5" PointX="5.25" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyTaiSanCNTTModel.XUAT_KHO" Width="1.5" PointX="8.25" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyTaiSanCNTTModel.NHOM_ND_CHUCNANG" Width="1.5" PointX="5.25" PointY="22.5" IsExpanded="true" />
+        <AssociationConnector Association="QuanLyTaiSanCNTTModel.FK_CAU_HINH_DM_CPU" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyTaiSanCNTTModel.FK_CAU_HINH_DM_HDH" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyTaiSanCNTTModel.FK_CAU_HINH_DM_MAN_HINH" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyTaiSanCNTTModel.FK_CAU_HINH_DM_O_CUNG" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyTaiSanCNTTModel.FK_CAU_HINH_DM_RAM" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyTaiSanCNTTModel.FK_CAU_HINH_DM_VGA" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyTaiSanCNTTModel.FK_CAU_HINH_THIETBI" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyTaiSanCNTTModel.FK_DIEU_CHUYEN_THIET_BI_DON_VI" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyTaiSanCNTTModel.FK_DIEU_CHUYEN_THIET_BI_DON_VI1" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyTaiSanCNTTModel.FK_DIEU_CHUYEN_THIET_BI_THIETBI" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyTaiSanCNTTModel.FK_XAC_NHAN_DIEU_CHUYEN_DIEU_CHUYEN_THIET_BI" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyTaiSanCNTTModel.FK_NHOM_ND_CHUCNANG_DM_CHUC_NANG" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyTaiSanCNTTModel.FK_NGUOI_DUNG_DON_VI" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyTaiSanCNTTModel.FK_NHAP_KHO_DON_VI" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyTaiSanCNTTModel.FK_THIETBI_DON_VI" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyTaiSanCNTTModel.FK_XUAT_KHO_DON_VI" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyTaiSanCNTTModel.FK_XUAT_KHO_DON_VI1" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyTaiSanCNTTModel.FK_HINH_ANH_THIETBI" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyTaiSanCNTTModel.FK_LOAI_THIETBI_NHOM_THIETBI" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyTaiSanCNTTModel.FK_THIETBI_LOAI_THIETBI" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyTaiSanCNTTModel.FK_NHAP_KHO_NGUOI_DUNG" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyTaiSanCNTTModel.FK_NHOM_ND_NGUOI_DUNG" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyTaiSanCNTTModel.FK_XUAT_KHO_NGUOI_DUNG" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyTaiSanCNTTModel.FK_XUAT_KHO_NGUOI_DUNG1" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyTaiSanCNTTModel.FK_THIETBI_NHA_CUNG_CAP" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyTaiSanCNTTModel.FK_NHAP_KHO_THIETBI" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyTaiSanCNTTModel.FK_NHOM_ND_NHOM_NGUOI_DUNG" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyTaiSanCNTTModel.FK_NHOM_ND_CHUCNANG_NHOM_NGUOI_DUNG" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyTaiSanCNTTModel.FK_NHOM_ND_CHUCNANG_QUYEN" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyTaiSanCNTTModel.FK_THONG_KE_THIETBI_THIETBI" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyTaiSanCNTTModel.FK_XUAT_KHO_THIETBI" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

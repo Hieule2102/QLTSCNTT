@@ -1,0 +1,102 @@
+﻿@model IEnumerable<Source.Models.NHA_CUNG_CAP>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<main>
+    <div class="container link">
+        <p>Trang chủ > Danh mục > Nhà cung cấp</p>
+        <hr />
+    </div>
+    <section class="container" id="nha-cc">
+        <h1 class="title">NHÀ CUNG CẤP</h1>
+        <div class="div-ncc">
+            <div class="them-ncc">
+                <h4 class="sub-title">
+                    Thêm nhà cung cấp
+                </h4>
+                @using (Html.BeginForm("Create", "NhaCungCap", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken() @Html.ValidationSummary(true)
+                    <form action="">
+                        <div class="form-group">
+                            <label for="">Tên NCC:</label>
+                            <input class="form-control"
+                                   name="TEN_NCC"
+                                   aria-describedby="emailHelp"
+                                   placeholder="" />
+                        </div>
+                        <div class="form-group">
+                            <label for="">Địa chỉ:</label>
+                            <input class="form-control"
+                                   name="DIA_CHI"
+                                   aria-describedby="emailHelp"
+                                   placeholder="" />
+                        </div>
+                        <div class="form-group">
+                            <label for="">Điện thoại:</label>
+                            <input class="form-control"
+                                   name="DIEN_THOAI"
+                                   aria-describedby="emailHelp"
+                                   placeholder="" />
+                        </div>
+                        <div class="form-group">
+                            <label for="">Fax:</label>
+                            <input class="form-control"
+                                   name="FAX"
+                                   aria-describedby="emailHelp"
+                                   placeholder="" />
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Ghi chú</label>
+                            <input class="form-control"
+                                   name="GHI_CHU"
+                                   aria-describedby="emailHelp"
+                                   placeholder="" />
+                        </div>
+                        <button type="submit" value="Create" class="them">THÊM</button>
+                    </form>
+                }
+            </div>
+            <div class="ds-ncc">
+                <h4 class="sub-title">
+                    Danh sách nhà cung cấp
+                </h4>
+                <table>
+                    <tr>
+                        <th>Mã NCC</th>
+                        <th>Tên nhà cung cấp</th>
+                        <th>Địa chỉ</th>
+                        <th>Điện thoại</th>
+                        <th>Fax</th>
+                        <th>Ghi chú</th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MA_NCC)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TEN_NCC)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DIA_CHI)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DIEN_THOAI)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FAX)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.GHI_CHU)
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </section>
+</main>

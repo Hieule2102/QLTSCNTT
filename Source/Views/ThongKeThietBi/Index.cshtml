@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Source.Models.THIETBI>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+    <main>
+        <div class="container link">
+            <p>Trang chủ > Báo cáo > Thống kê thiết bị</p>
+            <hr />
+        </div>
+        <section class="container" id="tk-tb">
+            <h1 class="title">THỐNG KÊ THIẾT BỊ</h1>
+            @using (Html.BeginForm("Index", "ThongKeThietBi"))
+            {
+                <div class="loc">
+                    <h4><i class="fas fa-filter"></i></h4>
+                    <div class="div-filter">
+                        <div class="filter1">
+                            <div class="filter">
+                                <label for="">Nhóm TB</label>
+                                @Html.DropDownList("nhomTB", null, "All", new
+                                {
+                                    @class =
+                                  "form-control",
+                                    @placeholder = "",
+                                    @onchange = @"form.submit();"
+                                  })
+                            </div>
+                            <div class="filter">
+                                <label for="">Loại TB</label>
+                                @Html.DropDownList("loaiTB", null, "All", new
+                                {
+                                    @class =
+                                  "form-control",
+                                    @placeholder = "",
+                                    @onchange = @"form.submit();"
+                                  })
+                            </div>
+                        </div>
+
+                        <div class="filter2">
+                            <div class="filter">
+                                <label for="">Đơn vị</label>
+                                @Html.DropDownList("donVi", null, "All", new
+                                {
+                                    @class =
+                                  "form-control",
+                                    @placeholder = "",
+                                    @onchange = @"form.submit();"
+                                  })
+                            </div>
+                            <div class="filter">
+                                <label for="">Trạng thái</label>
+                                @Html.DropDownList("trangThai", null, "All", new
+                                {
+                                    @class =
+                                  "form-control",
+                                    @placeholder = "",
+                                    @onchange = @"form.submit();"
+                                  })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            <div class="tk-tb">
+                <table>
+                    <tr>
+                        <th>Mã TB</th>
+                        <th>Tên TB</th>
+                        <th>Serial</th>
+                        <th>Trạng thái</th>
+                        <th>ĐVQL</th>
+                        <th>Người QL</th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.MATB)</td>
+                            <td>@Html.DisplayFor(modelItem => item.TENTB)</td>
+                            <td>@Html.DisplayFor(modelItem => item.SO_SERIAL)</td>
+                            <td>@Html.DisplayFor(modelItem => item.TINH_TRANG)</td>
+                            <td>@Html.DisplayFor(modelItem => item.DON_VI.TEN_DON_VI)</td>
+                            <td>@Html.DisplayFor(modelItem => item.MANS_QL)</td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </section>
+    </main>
+
+

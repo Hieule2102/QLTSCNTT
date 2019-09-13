@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Source.Models.NHOM_NGUOI_DUNG>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<main>
+    <div class="container link">
+        <p>Trang chủ > Quản lý người dùng > Nhóm người dùng</p>
+        <hr />
+    </div>
+    <section class="container" id="nhom-nd">
+        <h1 class="title">NHÓM NGƯỜI DÙNG</h1>
+        <div class="div-nhom-nd">
+            <div class="them-nhom-nd">
+                <h4 class="sub-title">
+                    Thêm nhóm người dùng
+                </h4>
+                @using (Html.BeginForm("Create", "NhomNguoiDung", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    @*@Html.ValidationSummary(true)*@
+            <form action="">
+                <div class="form-group">
+                    <label for="">Mã nhóm ND:</label>
+                    <input class="form-control"
+                           name="MA_NHOM"
+                           aria-describedby="emailHelp"
+                           placeholder="" />
+
+                </div>
+                @Html.ValidationSummary(null, new { @class = "thong-bao" })
+                <div class="form-group">
+                    <label for="">Tên nhóm ND:</label>
+                    <input class="form-control"
+                           name="TEN_NHOM"
+                           aria-describedby="emailHelp"
+                           placeholder="" />
+                </div>
+                <div class="form-group">
+                    <label for="nhom-tb">Ghi chú:</label>
+                    <textarea class="form-control"
+                              name="GHI_CHU"
+                              aria-describedby="emailHelp"
+                              placeholder=""></textarea>
+                </div>
+                <button type="submit" value="Create" class="them">THÊM</button>
+            </form>
+                }
+            </div>
+            <div class="ds-nnd">
+                <h4 class="sub-title">
+                    Danh sách nhóm người dùng
+                </h4>
+                <table>
+                    <tr>
+                        <th>Mã nhóm ND</th>
+                        <th>Tên nhóm</th>
+                        <th>Ghi chú</th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.MA_NHOM)</td>
+                            <td>@Html.DisplayFor(modelItem => item.TEN_NHOM)</td>
+                            <td>@Html.DisplayFor(modelItem => item.GHI_CHU)</td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </section>
+</main>
+

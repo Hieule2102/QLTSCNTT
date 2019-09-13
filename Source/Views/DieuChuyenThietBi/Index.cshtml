@@ -1,0 +1,95 @@
+﻿@model IEnumerable<Source.Models.DIEU_CHUYEN_THIET_BI>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+    <main>
+        <div class="container link">
+            <p>Trang chủ > Chức năng > Điều chuyển thiết bị</p>
+            <hr />
+        </div>
+
+        <section class="container" id="dieu-chuyen">
+            <h1 class="title">ĐIỀU CHUYỂN THIẾT BỊ</h1>
+            @using (Html.BeginForm())
+            {
+                <div class="form-dieu-chuyen">
+                    <div class="thong-tin-tb-dieu-chuyen">
+                        <h4 class="sub-title">
+                            Thông tin thiết bị điều chuyển
+                        </h4>
+                        @*<form action="">*@
+                        <div class="form-group">
+                            <label for="">Mã thiết bị:</label>
+                            @Html.DropDownList("MATB", null, String.Empty, new { @class = "form-control", @placeholder = "", @onchange = @"Fill_TenTB();" })
+                        </div>
+                        <div class="form-group">
+                            <label for="">Tên thiết bị:</label>
+                            @*@Html.TextBox("TENTB", null, String.Empty, new { @class = "form-control" })*@
+                            <input type="text" class="form-control" id="TENTB" name="TENTB" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Người ĐC:</label>
+                            <input class="form-control"
+                                   name="TEN_DON_VI"
+                                   aria-describedby="emailHelp"
+                                   placeholder="" />
+                        </div>
+                        <div class="form-group">
+                            <label for="">Nội dung:</label>
+                            <input class="form-control"
+                                   name="GHI_CHU"
+                                   aria-describedby="emailHelp"
+                                   placeholder="" />
+                        </div>
+                        @*</form>*@
+                    </div>
+                    <div class="dv-quan-ly">
+                        <h4 class="sub-title">
+                            Đơn vị quản lý
+                        </h4>
+                        @*<form action="">*@
+                        <div class="form-group">
+                            <label for="">ĐVQL:</label>
+                            @Html.DropDownList("MADV_QL", null, String.Empty, new { @class = "form-control", @placeholder = "" })
+                        </div>
+                        <div class="form-group">
+                            <label for="">Người QL:</label>
+                            <input class="form-control"
+                                   name="TEN_DON_VI"
+                                   aria-describedby="emailHelp"
+                                   placeholder="" />
+                        </div>
+                        @*</form>*@
+                    </div>
+                    <div class="dv-tiep-nhan">
+                        <h4 class="sub-title">
+                            Đơn vị tiếp nhận
+                        </h4>
+                        @*<form action="">*@
+                        <div class="form-group">
+                            <label for="">ĐV nhận:</label>
+                            @Html.DropDownList("MADV_NHAN", null, String.Empty, new { @class = "form-control", @placeholder = "" })
+                        </div>
+                        <div class="form-group">
+                            <label for="">Người nhận:</label>
+                            <input class="form-control"
+                                   name="TEN_DON_VI"
+                                   aria-describedby="emailHelp"
+                                   placeholder="" />
+                        </div>
+                        @*</form>*@
+                    </div>
+                </div>
+                <div class="submit">
+                    <button class="da-nhan">ĐÃ NHẬN</button>
+                    <button class="luu" name="SAVE" value="save">LƯU</button>
+                    <button class="reset" name="REFESH" value="refesh">LÀM MỚI</button>
+                </div>
+            }
+        </section>
+    </main>
+    
+
